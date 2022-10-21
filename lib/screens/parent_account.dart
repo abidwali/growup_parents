@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:growup_parents/screens/parent_account2.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/custom_clippath.dart';
+import 'package:growup_parents/widgets/custom_dropdown.dart';
 import 'package:growup_parents/widgets/custom_textfield_type1.dart';
 
 class ParentAccount extends StatefulWidget {
@@ -14,8 +15,6 @@ class ParentAccount extends StatefulWidget {
 class _ParentAccountState extends State<ParentAccount> {
   bool isPassWordVisible = true;
 
-  get items => null;
-  late final ValueChanged? onChanged;
 //double? height, width;
   @override
   Widget build(BuildContext context) {
@@ -62,14 +61,17 @@ class _ParentAccountState extends State<ParentAccount> {
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Name',
+                      hintText: "Name",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Email',
+                      hintText: "Email",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Id',
+                      hintText: "Id",
                       suffixIcon: IconButton(
                           icon: isPassWordVisible
                               ? const Icon(Icons.visibility_off)
@@ -91,18 +93,23 @@ class _ParentAccountState extends State<ParentAccount> {
                       text: 'Whatsapp number',
                       obscureText: false,
                       keyboardType: TextInputType.number,
-                      maxInputLength: 10,
+                      //maxInputLength: 10,
                       hintText: "+91",
                     ),
-                    CustomTextFieldTypeOne(
-                      text: 'Job profile',
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down_circle)),
-                      obscureText: false,
-                    ),
+                    // CustomTextFieldTypeOne(
+                    //   text: 'Job profile',
+                    //   hintText: "Eg",
+                    //   suffixIcon: IconButton(
+                    //       onPressed: () {
+                    //         return;
+                    //       },
+                    //       icon: const Icon(Icons.arrow_drop_down_circle)),
+                    //   obscureText: false,
+                    // ),
+                    const CustomDropDown(),
                     CustomTextFieldTypeOne(
                       text: 'Home status',
+                      hintText: "Eg",
                       obscureText: false,
                     ),
                     const SizedBox(height: 20),

@@ -49,10 +49,12 @@ class ParentAccount2 extends StatelessWidget {
                     Image.asset("assets/images/logo.png"),
                     CustomTextFieldTypeOne(
                       text: 'Number of child',
+                      hintText: "Eg 3",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
                       text: 'State',
+                      hintText: "Eg Jammu & Kashmir",
                       obscureText: false,
                       suffixIcon: IconButton(
                           onPressed: () {},
@@ -60,6 +62,7 @@ class ParentAccount2 extends StatelessWidget {
                     ),
                     CustomTextFieldTypeOne(
                       text: 'District',
+                      hintText: "Eg Anantnag",
                       obscureText: false,
                       suffixIcon: IconButton(
                           onPressed: () {},
@@ -67,6 +70,7 @@ class ParentAccount2 extends StatelessWidget {
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Block',
+                      hintText: "Eg Pahalgam",
                       obscureText: false,
                       suffixIcon: IconButton(
                           onPressed: () {},
@@ -74,14 +78,17 @@ class ParentAccount2 extends StatelessWidget {
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Village',
+                      hintText: "Eg Sallar",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Caste',
+                      hintText: "Eg obc",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Home status',
+                      hintText: "Eg",
                       obscureText: false,
                     ),
                     const SizedBox(height: 20),
