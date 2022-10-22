@@ -12,11 +12,11 @@ class ParentAccount3 extends StatefulWidget {
 
 class _ParentAccount3State extends State<ParentAccount3> {
   bool isPassWordVisible = true;
-//double? height, width;
+  double? height, width;
   @override
   Widget build(BuildContext context) {
-    //height = MediaQuery.of(context).size.height;
-    //width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -30,8 +30,8 @@ class _ParentAccount3State extends State<ParentAccount3> {
             ),
           ),
           Positioned(
-            top: 400,
-            left: 200,
+            bottom: -50,
+            right: -70,
             height: 250,
             width: 250,
             child: Container(
@@ -74,6 +74,7 @@ class _ParentAccount3State extends State<ParentAccount3> {
                     ),
                     const SizedBox(height: 20),
                     CustomButton(onTap: () {}, buttonText: "Create"),
+                    const SizedBox(height: 40),
                   ],
                 ),
               ),

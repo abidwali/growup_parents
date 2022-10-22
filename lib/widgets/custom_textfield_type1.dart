@@ -2,6 +2,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextFieldTypeOne extends StatelessWidget {
   TextEditingController? controller;
@@ -12,6 +13,7 @@ class CustomTextFieldTypeOne extends StatelessWidget {
   TextInputType? keyboardType;
   int? maxInputLength;
   String? hintText;
+  List<TextInputFormatter>? inputFormatters;
   CustomTextFieldTypeOne({
     Key? key,
     this.controller,
@@ -21,6 +23,7 @@ class CustomTextFieldTypeOne extends StatelessWidget {
     this.keyboardType,
     this.maxInputLength,
     this.hintText,
+    this.inputFormatters,
   }) : super(key: key);
 
   @override
@@ -55,6 +58,7 @@ class CustomTextFieldTypeOne extends StatelessWidget {
             style: Theme.of(context).textTheme.bodySmall,
             keyboardType: keyboardType,
             maxLength: maxInputLength,
+            inputFormatters: inputFormatters,
           ),
         ],
       ),

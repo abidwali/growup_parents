@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:growup_parents/screens/parent_account2.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/custom_clippath.dart';
@@ -15,11 +16,11 @@ class ParentAccount extends StatefulWidget {
 class _ParentAccountState extends State<ParentAccount> {
   bool isPassWordVisible = true;
 
-//double? height, width;
+  double? height, width;
   @override
   Widget build(BuildContext context) {
-    //height = MediaQuery.of(context).size.height;
-    //width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -33,8 +34,8 @@ class _ParentAccountState extends State<ParentAccount> {
             ),
           ),
           Positioned(
-            top: 400,
-            left: 200,
+            bottom: -50,
+            right: -70,
             height: 250,
             width: 250,
             child: Container(
@@ -88,12 +89,13 @@ class _ParentAccountState extends State<ParentAccount> {
                       obscureText: false,
                       keyboardType: TextInputType.number,
                       hintText: "+91",
+                      inputFormatters: [LengthLimitingTextInputFormatter(10)],
                     ),
                     CustomTextFieldTypeOne(
                       text: 'Whatsapp number',
                       obscureText: false,
                       keyboardType: TextInputType.number,
-                      //maxInputLength: 10,
+                      inputFormatters: [LengthLimitingTextInputFormatter(10)],
                       hintText: "+91",
                     ),
                     // CustomTextFieldTypeOne(
@@ -118,7 +120,7 @@ class _ParentAccountState extends State<ParentAccount> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ParentAccount2()));
+                                builder: (context) => ParentAccount2()));
                       },
                       buttonText: "Next",
                     ),

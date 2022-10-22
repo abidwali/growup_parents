@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:growup_parents/screens/parent_account3.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
@@ -5,13 +7,13 @@ import 'package:growup_parents/widgets/custom_clippath.dart';
 import 'package:growup_parents/widgets/custom_textfield_type1.dart';
 
 class ParentAccount2 extends StatelessWidget {
-  const ParentAccount2({super.key});
+  ParentAccount2({super.key});
 
-//double? height, width;
+  double? height, width;
   @override
   Widget build(BuildContext context) {
-    //height = MediaQuery.of(context).size.height;
-    //width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -25,8 +27,8 @@ class ParentAccount2 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 400,
-            left: 200,
+            bottom: -50,
+            right: -70,
             height: 250,
             width: 250,
             child: Container(
