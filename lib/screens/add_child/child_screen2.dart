@@ -1,13 +1,18 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
-import 'package:growup_parents/screens/parent_account3.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/custom_clippath.dart';
+
 import 'package:growup_parents/widgets/custom_textfield_type1.dart';
 
-class ParentAccount2 extends StatelessWidget {
-  ParentAccount2({super.key});
+class ChildScreenTwo extends StatefulWidget {
+  const ChildScreenTwo({super.key});
+
+  @override
+  State<ChildScreenTwo> createState() => _ChildScreenTwoState();
+}
+
+class _ChildScreenTwoState extends State<ChildScreenTwo> {
+  bool isPassWordVisible = true;
 
   double? height, width;
   @override
@@ -49,49 +54,52 @@ class ParentAccount2 extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset("assets/images/logo.png"),
+                    const SizedBox(height: 20),
                     CustomTextFieldTypeOne(
-                      text: 'Number of child',
-                      hintText: "Eg 3",
+                      text: 'Parent Feedback',
+                      hintText: "Good",
                       obscureText: false,
                     ),
                     CustomTextFieldTypeOne(
-                      text: 'State',
-                      hintText: "Eg Jammu & Kashmir",
+                      text: 'Aim',
+                      hintText: "Doctor",
                       obscureText: false,
+                    ),
+                    CustomTextFieldTypeOne(
+                      text: 'School',
+                      obscureText: false,
+                    ),
+                    CustomTextFieldTypeOne(
+                      text: 'School Board',
+                      obscureText: false,
+                    ),
+                    CustomTextFieldTypeOne(
+                      text: 'Password',
+                      hintText: "Eg abc",
                       suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down_circle)),
+                          icon: isPassWordVisible
+                              ? const Icon(Icons.visibility_off)
+                              : const Icon(Icons.visibility),
+                          onPressed: () {
+                            setState(() {
+                              isPassWordVisible = !isPassWordVisible;
+                            });
+                          }),
+                      obscureText: isPassWordVisible,
                     ),
                     CustomTextFieldTypeOne(
-                      text: 'District',
-                      hintText: "Eg Anantnag",
-                      obscureText: false,
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down_circle)),
-                    ),
-                    CustomTextFieldTypeOne(
-                      text: 'Block',
-                      hintText: "Eg Pahalgam",
-                      obscureText: false,
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down_circle)),
-                    ),
-                    CustomTextFieldTypeOne(
-                      text: 'Village',
-                      hintText: "Eg Sallar",
-                      obscureText: false,
-                    ),
-                    CustomTextFieldTypeOne(
-                      text: 'Caste',
-                      hintText: "Eg obc",
-                      obscureText: false,
-                    ),
-                    CustomTextFieldTypeOne(
-                      text: 'Home status',
+                      text: 'confirm Password',
                       hintText: "Eg",
-                      obscureText: false,
+                      suffixIcon: IconButton(
+                          icon: isPassWordVisible
+                              ? const Icon(Icons.visibility_off)
+                              : const Icon(Icons.visibility),
+                          onPressed: () {
+                            setState(() {
+                              isPassWordVisible = !isPassWordVisible;
+                            });
+                          }),
+                      obscureText: isPassWordVisible,
                     ),
                     const SizedBox(height: 20),
                     CustomButton(
@@ -99,9 +107,9 @@ class ParentAccount2 extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ParentAccount3()));
+                                builder: (context) => const ChildScreenTwo()));
                       },
-                      buttonText: "Next",
+                      buttonText: "Create Account",
                     ),
                     const SizedBox(height: 40),
                   ],

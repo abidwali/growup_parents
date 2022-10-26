@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:growup_parents/screens/otp_auth_screen.dart';
-import 'package:growup_parents/screens/parent_account.dart';
+import 'package:growup_parents/screens/login_signup/otp_auth_screen.dart';
+import 'package:growup_parents/screens/login_signup/parent_account.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -37,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        //Navigator.pop(context);
+                        Navigator.pop(context);
                       },
                       icon: const Icon(
                         CupertinoIcons.arrow_left,

@@ -5,14 +5,11 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-
-
 class TestWidgets extends StatefulWidget {
   const TestWidgets({super.key});
 
   @override
   State<TestWidgets> createState() => _TestWidgetsState();
-
 }
 
 class _TestWidgetsState extends State<TestWidgets> {
@@ -138,18 +135,22 @@ class _TestWidgetsState extends State<TestWidgets> {
   List? statesList;
   String? _myState;
 
-  dynamic stateInfoUrl = 'https://webhook.site/8947ee3a-e99a-44e8-8183-1ffeaec9472c';
-  Future<String?> _getStateList() async {
-    await http.post(stateInfoUrl, headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }, body: {
-      "api_key": '25d55ad283aa400af464c76d713c07ad',
-    }).then((response) {
-      var data = json.decode(response.body);
+  var url =
+      Uri.parse('https://webhook.site/8947ee3a-e99a-44e8-8183-1ffeaec9472c');
+  Future<List?> _getStateList() async {
 
-//      print(data);
+
+    await http.post(url, headers: {
+      // 'Content-Type': 'application/x-www-form-urlencoded'
+    }, body: {
+      //"api_key": '25d55ad283aa400af464c76d713c07ad',
+    }).then((response) {
+      var data = json.decode(response.body) as List<dynamic>;
+
+      print(data);
       setState(() {
-        statesList = data['state'];
+        statesList = data[0]['name'];
+        print(statesList);
       });
     });
   }
@@ -159,7 +160,7 @@ class _TestWidgetsState extends State<TestWidgets> {
   String? _myCity;
 
   dynamic cityInfoUrl =
-      'http://cleanions.bestweb.my/api/location/get_city_by_state_id';
+      Uri.parse('https://webhook.site/8947ee3a-e99a-44e8-8183-1ffeaec9472c');
   Future<String?> _getCitiesList() async {
     await http.post(cityInfoUrl, headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -170,7 +171,7 @@ class _TestWidgetsState extends State<TestWidgets> {
       var data = json.decode(response.body);
 
       setState(() {
-        citiesList = data['cities'];
+        citiesList = data['0']['districtList'];
       });
     });
   }
