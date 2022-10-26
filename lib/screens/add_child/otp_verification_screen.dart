@@ -1,18 +1,18 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/otp_box_widget.dart';
 
-class OtpAuthScreen extends StatefulWidget {
-  const OtpAuthScreen({super.key});
+class OtpVerificationScreenChild extends StatefulWidget {
+  const OtpVerificationScreenChild({super.key});
 
   @override
-  State<OtpAuthScreen> createState() => _OtpAuthScreenState();
+  State<OtpVerificationScreenChild> createState() =>
+      _OtpVerificationScreenChildState();
 }
 
-class _OtpAuthScreenState extends State<OtpAuthScreen> {
+class _OtpVerificationScreenChildState
+    extends State<OtpVerificationScreenChild> {
   @override
   Widget build(BuildContext context) {
     double? height, width;
@@ -20,7 +20,7 @@ class _OtpAuthScreenState extends State<OtpAuthScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: height * 1,
         child: Stack(
           children: [
@@ -33,7 +33,7 @@ class _OtpAuthScreenState extends State<OtpAuthScreen> {
                   children: [
                     const SizedBox(height: 15),
                     Image.asset(
-                      "assets/images/img2.png",
+                      "assets/images/childotp.png",
                       width: width * 1,
                       height: height * .57,
                     ),
@@ -121,10 +121,6 @@ class _OtpAuthScreenState extends State<OtpAuthScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             OtpBox(first: true, last: false),
-                            const SizedBox(width: 5),
-                            OtpBox(first: false, last: false),
-                            const SizedBox(width: 5),
-                            OtpBox(first: false, last: false),
                             const SizedBox(width: 5),
                             OtpBox(first: false, last: false),
                             const SizedBox(width: 5),

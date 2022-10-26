@@ -56,6 +56,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
               ),
             ),
             style: Theme.of(context).textTheme.bodySmall,
+            icon: const Icon(Icons.arrow_drop_down_circle),
           ),
         ],
       ),

@@ -31,16 +31,16 @@ class IntroScreenOne extends StatelessWidget {
             right: 30,
             top: 100,
             child: Container(
-              height: height! * .39,
-              width: width! * .55,
+              height: 280,
+              width: 221.58,
               decoration: BoxDecoration(
                   color: const Color(0xffE3BBEA),
                   borderRadius: BorderRadius.circular(30)),
             ),
           ),
           Positioned(
-            right: 50,
-            top: 93,
+            right: 30,
+            top: 63,
             child: Image.asset(
               "assets/images/introback.png",
               height: height! * .4,
@@ -52,7 +52,7 @@ class IntroScreenOne extends StatelessWidget {
             top: 220,
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 5, color: Colors.white),
+                //border: Border.all(width: 5, color: Colors.white),
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Image.asset(
@@ -62,10 +62,10 @@ class IntroScreenOne extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            bottom: 80,
+          Positioned(
+            top: (230 + height! * .39),
             left: 70,
-            child: Text(
+            child: const Text(
               "UnderStand Your \nChild's Strength And \nWeakness.",
               style: TextStyle(
                 color: Color(0xff4A2A51),
@@ -93,19 +93,19 @@ class IntroScreenTwo extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Positioned(
-            //right: 42.33,
+           
             top: 15,
-            //left: 59.67,
+            
             child: Image.asset(
               "assets/images/introtwo.png",
               height: height! * .7,
               width: width! * 1,
             ),
           ),
-          const Positioned(
-            bottom: 80,
+          Positioned(
+            top: (230 + height! * .39),
             left: 70,
-            child: Text(
+            child: const Text(
               "Step By Step \nLearning Progress Of \nYour Child.",
               style: TextStyle(
                 color: Color(0xff4A2A51),
@@ -140,8 +140,8 @@ class IntroScreenThree extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 30,
-            top: 100,
+            right: 10,
+            top: 93,
             child: Image.asset(
               "assets/images/introthreeback.png",
               height: height! * .4,
@@ -153,7 +153,7 @@ class IntroScreenThree extends StatelessWidget {
             top: 220,
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(width: 5, color: Colors.white),
+                //border: Border.all(width: 5, color: Colors.white),
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Image.asset(
@@ -163,10 +163,10 @@ class IntroScreenThree extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            bottom: 80,
+          Positioned(
+            top: (230 + height! * .39),
             left: 70,
-            child: Text(
+            child: const Text(
               "Motivate Your Child \nAnd Help Them \nGrow.",
               style: TextStyle(
                 color: Color(0xff4A2A51),

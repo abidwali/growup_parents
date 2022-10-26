@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growup_parents/screens/add_child/otp_verification_screen.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/custom_clippath.dart';
 
@@ -107,7 +108,7 @@ class _ChildScreenTwoState extends State<ChildScreenTwo> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ChildScreenTwo()));
+                                builder: (context) => const OtpVerificationScreenChild()));
                       },
                       buttonText: "Create Account",
                     ),

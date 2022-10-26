@@ -2,10 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:growup_parents/screens/add_child/child_screen1.dart';
+import 'package:growup_parents/screens/add_child/otp_verification_screen.dart';
 import 'package:growup_parents/screens/intro/intro_screen.dart';
 import 'package:growup_parents/screens/login_signup/loginscreen.dart';
+import 'package:growup_parents/screens/login_signup/otp_auth_screen.dart';
 import 'package:growup_parents/screens/test.dart';
 import 'package:flutter/services.dart';
+import 'package:growup_parents/widgets/otp_box_widget.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

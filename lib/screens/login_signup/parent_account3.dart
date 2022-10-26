@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:growup_parents/screens/add_child/child_screen1.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/custom_clippath.dart';
 import 'package:growup_parents/widgets/custom_textfield_type1.dart';
@@ -73,7 +74,17 @@ class _ParentAccount3State extends State<ParentAccount3> {
                       obscureText: isPassWordVisible,
                     ),
                     const SizedBox(height: 20),
-                    CustomButton(onTap: () {}, buttonText: "Create"),
+                    CustomButton(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ChildScreenOne(),
+                          ),
+                        );
+                      },
+                      buttonText: "Create",
+                    ),
                     const SizedBox(height: 40),
                   ],
                 ),
