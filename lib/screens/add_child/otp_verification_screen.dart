@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:growup_parents/widgets/custom_button_widget.dart';
 import 'package:growup_parents/widgets/otp_box_widget.dart';
 
+import '../../parentdashboard/open_account.dart';
+
 class OtpVerificationScreenChild extends StatefulWidget {
   const OtpVerificationScreenChild({super.key});
 
@@ -134,11 +136,17 @@ class _OtpVerificationScreenChildState
                         height: 40,
                       ),
                       CustomButton(
-                        onTap: () {},
-                        buttonColor: Colors.transparent,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const Account()));
+                        },
+                        buttonColor: const Color(0xff4A2A51),
                         borderRadius: 5,
-                        textColor: Colors.amber,
-                        buttonText: "Query? Contact",
+                        //: Colors.amber,
+                        buttonText: "Verify",
                       ),
                     ],
                   ),
